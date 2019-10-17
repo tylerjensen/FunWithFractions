@@ -20,19 +20,20 @@ namespace FracFunLib.Tests
 {
     public class CalculatorTests
     {
-        //[Theory]
-        //[InlineData(@"1/2 * 3_3/4", @"1_7/8")]
-        //[InlineData(@"2_3/8 + 9/8", @"3_1/2")]
-        //public void FractionCalculatorAddition(string input, string expectedOutput)
-        //{
-        //    // Arrange
-        //    IFractionCalculator calc = new FractionCalculator();
-        //
-        //    // Act
-        //    var result = calc.Calculate(input);
-        //
-        //    // Assert
-        //    Assert.Equal(expectedOutput, result);
-        //}
+        [Theory]
+        [InlineData(@"1/2 * 3_3/4", @"1_7/8")]
+        [InlineData(@"2_3/8 + 9/8", @"3_1/2")]
+        public void FractionCalculatorAddition(string input, string expectedOutput)
+        {
+            // Arrange
+            IParser parser = new Parser();
+            ICalculator calc = new Calculator(parser);
+        
+            // Act
+            var result = calc.Calculate(input);
+        
+            // Assert
+            Assert.Equal(expectedOutput, result);
+        }
     }
 }

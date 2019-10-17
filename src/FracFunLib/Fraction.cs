@@ -9,15 +9,15 @@ namespace FracFunLib
         public int Numerator { get; set; }
         public int Denominator { get; set; }
 
-        public Fraction(int numerator, int denominator, bool simplify = true)
+        public Fraction(int numerator, int denominator)
         {
             if (denominator == 0) throw new ArgumentException("Denominator cannot be zero.");
             Numerator = numerator;
             Denominator = denominator;
-            if (simplify) Simplify();
+            Simplify();
         }
 
-        public void Simplify()
+        private void Simplify()
         {
             int gcd = FindGreatestCommonDivisor(Math.Abs(Numerator), Math.Abs(Denominator));
             Numerator = (int)(Numerator / gcd);
@@ -50,6 +50,31 @@ namespace FracFunLib
             int x = a.Numerator * b.Denominator;
             int y = a.Denominator * b.Numerator;
             return new Fraction(x, y);
+        }
+
+        public static bool operator ==(Fraction a, Fraction b)
+        {
+            return a.Numerator == b.Numerator && a.Denominator == b.Denominator;
+        }
+
+        public static bool operator !=(Fraction a, Fraction b)
+        {
+            return a.Numerator != b.Numerator || a.Denominator != b.Denominator;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Fraction)
+            {
+                return this == (Fraction)obj;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            decimal value = (decimal)Numerator / (decimal)Denominator;
+            return value.GetHashCode();
         }
 
 

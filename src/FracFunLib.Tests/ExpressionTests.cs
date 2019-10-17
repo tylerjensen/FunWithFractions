@@ -14,14 +14,14 @@ namespace FracFunLib.Tests
         {
             // Arrange
             IParser parser = new Parser();
+            var expected = new Fraction(expectedNumerator, expectedDenominator);
 
             // Act
             var expression = parser.Parse(input);
             var result = expression.Execute();
 
             // Assert
-            Assert.Equal(expectedNumerator, result.Numerator);
-            Assert.Equal(expectedDenominator, result.Denominator);
+            Assert.Equal(expected, result);
         }
 
         [Theory]
@@ -32,14 +32,14 @@ namespace FracFunLib.Tests
         {
             // Arrange
             IParser parser = new Parser();
+            var expected = new Fraction(expectedNumerator, expectedDenominator);
 
             // Act
             var expression = parser.Parse(input);
             var result = expression.Execute();
 
             // Assert
-            Assert.Equal(expectedNumerator, result.Numerator);
-            Assert.Equal(expectedDenominator, result.Denominator);
+            Assert.Equal(expected, result);
         }
 
     }
