@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FracFun", "FracFun\FracFun.csproj", "{7F780877-BC97-4CC3-9738-B0BB1727E869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FracFun", "FracFun\FracFun.csproj", "{7F780877-BC97-4CC3-9738-B0BB1727E869}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FracFunLib", "FracFunLib\FracFunLib.csproj", "{118E25AE-52BF-4B84-A5CA-F88E2043AA37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FracFunLib", "FracFunLib\FracFunLib.csproj", "{118E25AE-52BF-4B84-A5CA-F88E2043AA37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FracFunLib.Tests", "FracFunLib.Tests\FracFunLib.Tests.csproj", "{6AE17B19-9F9D-4BAB-B387-E691F5A91975}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FracFunLib.Tests", "FracFunLib.Tests\FracFunLib.Tests.csproj", "{6AE17B19-9F9D-4BAB-B387-E691F5A91975}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunFracWeb", "FunFracWeb\FunFracWeb.csproj", "{C3CA997B-6087-48B2-83AF-6E191BB1CA31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{6AE17B19-9F9D-4BAB-B387-E691F5A91975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AE17B19-9F9D-4BAB-B387-E691F5A91975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AE17B19-9F9D-4BAB-B387-E691F5A91975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3CA997B-6087-48B2-83AF-6E191BB1CA31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3CA997B-6087-48B2-83AF-6E191BB1CA31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3CA997B-6087-48B2-83AF-6E191BB1CA31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3CA997B-6087-48B2-83AF-6E191BB1CA31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

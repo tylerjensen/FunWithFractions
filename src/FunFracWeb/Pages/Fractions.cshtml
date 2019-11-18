@@ -1,0 +1,33 @@
+﻿@page
+@model FractionsModel
+@{
+    ViewData["Title"] = "Fractions";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>Welcome to Fun with Fractions!</h2>
+<p>
+    Enter two or more fractions, each separated by an operator and click Submit.<br />
+    All fractions have a / with no spaces between numerator and denominator.<br />
+    All operators are separated by spaces between fractions, including
+    fractions that have a whole number that precedes it. <br />The whole numer and
+    the fraction are separated by an underscore "_". <br />Operators inlcude the
+    following: <br />use * for multiplication, / for division, + for addition and
+    - for subtraction.
+</p>
+<p>
+    Valid examples inlcude:
+</p>
+<pre>
+          1/2 * 3_3/4
+          2_3/8 + 9/8
+          1/2 * 3_3/4 + 4_5/8
+          2_3/8 + 9/8 / 2/3
+</pre>
+<form method="post">
+    <input asp-for="FractionInput" size="80" />
+    <br />
+    <input type="submit" />
+</form>
+<p>@Model.ResultMessage</p>
+
