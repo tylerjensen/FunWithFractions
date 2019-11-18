@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using FracFunLib;
 using Microsoft.AspNetCore.Mvc;
@@ -15,10 +16,21 @@ namespace FunFracWeb.Pages
 
         public string FractionInput { get; set; }
         public string ResultMessage { get; set; }
+        public string ServedBy { get; set; }
 
         public FractionsModel(ILogger<FractionsModel> logger)
         {
             _logger = logger;
+            try
+            {
+                var hostName = Dns.GetHostName();
+                var hostIp = Dns.GetHostAddresses(hostName).FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+                ServedBy = $"{hostName} on {hostIp?.ToString()}"; ;
+            }
+            catch (Exception e)
+            {
+                ServedBy = $"Undetermined - {e.Message}";
+            }
         }
 
         public void OnGet()
